@@ -6,7 +6,8 @@
   "description": "Taiga on chrome for you",
 
   "icons": {
-    "16": "icon.png"
+    "16": "icon.png",
+    "128": "icon.png"
   },
   "permissions": [
     {"socket": [
