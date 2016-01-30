@@ -88,9 +88,56 @@ document.addEventListener('DOMContentLoaded', function() {
 var submitButton = document.getElementById('submitButton');
 
 submitButton.addEventListener('click', function() {
-  document.getElementById('email').remove();
-  // login();
+  var userInfo = {};
+
+  userInfo.username = document.getElementById("email").value;
+  userInfo.password = document.getElementById("password").value;
+
+  login(userInfo);
   });
+
+function login(userInfo) {
+  var loginAPI = 'https://api.taiga.io/api/v1/auth';
+  var params = 'type=normal' + '&username=' + userInfo.username + '&password=' + userInfo.password;
+
+  var x = new XMLHttpRequest();
+  x.open('POST', loginAPI);
+  x.responseType = 'json';
+
+  x.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  x.onload = function() {
+    // logged in
+
+    // Parse and process the response from Google Image Search.
+    var response = x.response;
+
+            var address = isServer ? 'ws://testapi.livezelo.com/socket/'+response.id+'/initiate' : window.location.href.replace('http', 'ws');
+             var ws = new WebSocket(address);
+            ws.addEventListener('open', function() {
+                log('Connected');
+            });
+            ws.addEventListener('close', function() {
+                log('Connection lost');
+               
+            });
+
+              ws.addEventListener('message', function(e) {
+  
+              });
+
+
+      
+    console.log(response);
+  };
+
+  x.onerror = function() {
+    console.log('login error!');
+  };
+
+  x.send(params);
+}
+
 // login code ends
 
 
