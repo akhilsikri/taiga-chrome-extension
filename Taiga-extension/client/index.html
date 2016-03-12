@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<style type="text/css">
+  h1 {
+    color: #00a1df;
+    font-size: 2em;
+  }
+
+  #mainPopup {
+      min-width: 160px;
+      padding: 0px 5px 0px 5px;
+    font-family: Helvetica, Ubuntu, Arial, sans-serif;
+    }
+  
+  .formInput {
+    padding: 5px;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <script src="sha1.js"></script>
+    <script src="http.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+
+  <div id="mainPopup">
+    <h1>Zelo on Taiga</h1>
+    <form name="loginForm">
+          <div class="formInput">
+              <input type="text" id='email' placeholder="Enter your email">
+          </div>
+          <div class="formInput">
+            <input type="password" id='password' placeholder="Enter your password">
+      </div>
+        <div style="padding: 5px; margin-top: 5px">
+            <input type='button' value='Login' id='submitButton'/>
+        </div>
+    </form>
+  </div>
+
+  <!--textarea id="log"></textarea>
+    <input type="text" id="input" placeholder="Type a message to other connected clients here"-->
+  </body>
+</html>
